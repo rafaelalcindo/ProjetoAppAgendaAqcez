@@ -1,0 +1,13 @@
+.fc-button-group{
+	/*display: none; */
+}
+
+.fc-right{
+	display: none;
+}
+
+.calendario_position{
+	margin-top: 17%;
+	height: 70%;
+	overflow: auto;
+}

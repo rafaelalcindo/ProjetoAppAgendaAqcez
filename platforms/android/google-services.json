@@ -1,0 +1,71 @@
+{
+  "project_info": {
+    "project_number": "94293016035",
+    "project_id": "agendaaqcez"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94293016035:android:e24ed578d558cb67",
+        "android_client_info": {
+          "package_name": "pushTeste.aqcez.com.br"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94293016035-l8dmh9utlf8dg6fpajb9820mbd8d57m7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNtc5bCNLZvE7-041myT4AoAhVtB6xJjw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:94293016035:android:59a09d61e8e4b543",
+        "android_client_info": {
+          "package_name": "angenda.com.aqcez"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "94293016035-l8dmh9utlf8dg6fpajb9820mbd8d57m7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNtc5bCNLZvE7-041myT4AoAhVtB6xJjw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

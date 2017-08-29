@@ -1,0 +1,27 @@
+body{
+	background-color: #262626;
+}
+
+.view{
+	background-color: #262626;
+	overflow: auto;
+}
+
+.list-block{
+	background-color: #ffffff;
+	border-radius: 20px;
+	box-shadow: 1px 1px 15px #ffad33;
+	margin-top: 25%;
+}
+
+.buttons-row{
+	margin-left: 24%;
+	padding-bottom: 7%;
+	width: 50%;
+
+}
+
+.center{
+	text-align: center;	
+}
+

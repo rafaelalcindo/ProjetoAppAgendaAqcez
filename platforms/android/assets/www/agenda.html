@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" type="text/css" href="css/framework7/framework7.material.colors.min.css" >
+        <link rel="stylesheet" type="text/css" href="css/framework7/framework7.material.min.css" >
+
+        <link rel="stylesheet" type="text/css" href="css/materialize/materialize.css">
+        <!-- <link rel="stylesheet" type="text/css" href="css/inicio_css.css"> -->
+
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap-datetimepicker.min.css">
+
+        <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.4.custom/jquery-ui.min.css">
+        <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.4.custom/jquery-ui.structure.min.css">
+        <link rel="stylesheet" type="text/css" href="js/jquery-ui-1.11.4.custom/jquery-ui.theme.min.css">
+        <link rel="stylesheet" type="text/css" href="js/datapicker/jquery.ui.timepicker.css">
+
+        <link href='js/fullcalendar/fullcalendar.min.css' rel='stylesheet' />
+        <link href='js/fullcalendar/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+
+        <link rel="stylesheet"  type="text/css" href="css/agenda_css.css" >
+
+        <title>Agenda Aqcez</title>
+    </head>
+    <body onload="onLoad()">
+        <input type="hidden" value="" id="id_user" >
+        
+        <div class="views">
+          <!-- Your main view, should have "view-main" class -->
+          <div class="view view-main">
+
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="left">
+                        <a href="#" class="link icon-only open-left-panel">
+                            <i class="icon icon-bars"></i>
+                        </a>
+                    </div>   
+                    <div class="right">
+                        Agenda Aqcez
+                    </div>          
+                </div>
+            </div>
+
+            <div class="calendario_position">
+              <div id="calendar" style="overflow: auto;"></div>  
+            </div>
+            
+
+            <div class="page-content">
+              <div class="content-block">
+                <!-- In data-popup attribute we specify CSS selector of popup we need to open -->
+               <!-- <p><a href="#" data-popup=".popup-about" class="open-popup">Open About Popup </a></p>
+                <p><a href="#" data-popup=".popup-services" class="open-popup">Open Services Popup </a></p>
+                <p><button class="btn btn-primary" id="btn_teste" >Abrir Pop-up</button></p> -->
+              </div>
+            </div>
+                        
+          </div>
+        </div>
+
+        <!-- ===================================== Pop Up Cadastro ====================================  -->
+
+        <div class="popup popup-about">
+            <div class="content-block">
+            <div class="row" ><div class="col s2" ><button class="btn btn-danger close-popup" >X</button></div></div>
+              <p>Adiconar Contato</p>
+              <hr/>
+              <div class="row">
+                  <div class="input-field col s6">
+                      <input  id="data_evento" type="text" >
+                      <label for="data_evento">Data do evento</label>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="input-field col s12">
+                      <input  id="hora_evento" type="text" >
+                      <label for="hora_evento">Hora</label>
+                  </div>
+               </div>
+              <div class="row">
+                  <div class="input-field col s12">
+                      <input  id="nome_evento" type="text" class="validate">
+                      <label for="nome_evento">Nome do evento</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s12">
+                      <input  id="email_evento" type="email" class="validate">
+                      <label for="email_evento">Email</label>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s12">
+                      <input  id="telefone_evento" type="text" class="validate">
+                      <label for="telefone_evento">Telefone</label>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="descricao_evento" class="materialize-textarea"></textarea>
+                  <label for="descricao_evento">Descrição</label>
+                </div>
+              </div>
+              
+
+                <label>Enviou a Apresentação?</label>
+                <div class="list-block">
+                  <ul>
+                    <!-- Single radio input -->
+                    <li>
+                      <label class="label-radio item-content">
+                        <!-- Checked by default -->
+                        <input type="radio" name="apresentacao_evento" value="1" checked="checked">
+                        <div class="item-media">
+                          <i class="icon icon-form-radio"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Sim</div>
+                        </div>
+                      </label>
+                    </li>
+                    <!-- Another radio input -->
+                    <li>
+                      <label class="label-radio item-content">
+                        <input type="radio" name="apresentacao_evento" value="0">
+                        <div class="item-media">
+                          <i class="icon icon-form-radio"></i>
+                        </div>
+                        <div class="item-inner">
+                          <div class="item-title">Não</div>
+                        </div>
+                      </label>
+                    </li>                    
+                  </ul>
+                </div>                
+
+               <div class="row">
+                  <div class="input-field col s12">
+                      <input  id="contato_evento" type="text" class="validate">
+                      <label for="contato_evento">Nome do Contato</label>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="input-field col s12">
+                      <input  id="cargo_evento" type="text" class="validate">
+                      <label for="cargo_evento">Cargo</label>
+                  </div>
+               </div>
+
+               <div class="row">
+                  <div class="input-field col s12">
+                      <input  id="endereco_evento" type="text" class="validate">
+                      <label for="endereco_evento">Endereço</label>
+                  </div>
+               </div>
+
+               <br/>
+
+               <label for="tipo_evento" >Tipo</label>
+               <select id="tipo_evento" class="form-control" >
+                   <option value="Pessoal" >Pessoal</option>
+                   <option value="Reuniao_propria" >Reunião Própria</option>
+                   <option value="Reuniao_ferramenta" >Reunião Ferramenta</option>
+                   <option value="Compromisso_aqcez" >Compromisso Aqcez</option>
+                   <option value="go_construct" >Go Construct</option>
+               </select>
+
+               <label></label>
+
+               <label>Quem Vai</label>
+               <select id="quem_vai_evento" class="form-control" >
+
+               </select>
+               <br/><br/>
+
+               <p class="buttons-row" style="width: 65%; padding-left: 34%; " >
+                  <a href="#" id="salvar_evento" class="button button-raised button-fill color-orange">Salvar</a>                  
+                </p>
+
+
+               <!-- <p><a href="#" class="close-popup">Close popup</a></p> -->
+              
+            </div>
+        </div>
+
+        <!-- ================================ Pop Up Visualizar Registro ========================================= -->
+
+        <div class="popup popup-visu">
+          <div class="content-block">
+            <div class="row" ><div class="col s2" ><button class="btn btn-danger close-popup" >X</button></div></div>
+            <div class="row">
+              <div class="col s12">
+                <div class="form-group" align="center" >
+                  <h3 class="nome_evento_visu" >Teste de Titulo</h3>  
+                </div>
+
+                <div class="form-group">
+                  <label>Descrição</label>
+                  <p class="descInfo" style="text-align: justify;"></p>
+                </div>
+                <hr/>
+
+                <div class="row" >
+                  <div class="col s6">
+                     <div class="form-group">
+                        <label>Categoria:</label>
+                        <p class="infoCategoria"></p>
+                        <hr>
+                        <label>Nome vizitar:</label>
+                        <p class="nomeInfo sobrenomeInfo"> </p>
+                        <hr>
+                        
+                        <label>Enviou Projeto</label>
+                        <p class="projeto_enviado"></p>
+                        <hr>
+                        <label>Tipo:</label>
+                        <p class="tipoInfo"></p>                      
+                     </div>
+
+                     <hr/>
+                  </div>
+
+                  <div class="col s6" >
+                    <div class="form-group">
+                      <label>Nome do Contato:</label>
+                      <p class="nome_contato"></p>
+                      <hr>
+                      <label>Email do Contato:</label>
+                      <p class="email_contato"></p>
+                      <hr>
+                      <label>Telefone do Contato:</label>
+                      <p class="tel_contato"></p>
+                      <hr>
+                      <label>Cargo:</label>
+                      <p class="cargo_contato"></p>
+                      <hr>
+                      <label>Endereço:</label>
+                      <p class="endereco_contato"></p>
+                      <hr>
+                      
+                      
+                    </div>
+                  </div>
+
+                </div><!-- Fim da Primeira parte -->
+
+                 <div class="form-group">
+                  <div class="row">
+                      <div class="col-xs-6">
+                        <label><b>Data do Evento:</b> <span style="font-size: 8px;" class="dataInfo"></span></label>                     
+                      </div>
+                      <div class="col-xs-6">
+                        <label><b>Hora do Evento:</b> <span style="font-size: 8px;" class="h_inicioInfo"></span></label>
+                      </div>                    
+                    </div>
+                 </div>
+                 <hr/>
+
+                <p class="buttons-row btn_gropo_opt">
+                  <a href="#" class="button button-raised button-fill color-green">Editar</a>
+                  <a href="#" class="button button-raised button-fill color-red">Deletar</a>                  
+                </p>
+                
+              </div>
+              
+            </div>
+          </div>
+        </div>
+
+
+        <!-- =============================== Fim de Visualizar Registro ========================================== -->
+
+
+
+
+        <!-- =============================== começo de Editar Registro ========================================== -->
+
+            <div class="popup popup-editar">
+              <div class="content-block">
+                <input type="hidden" id="id_cale_edit" value="" >
+                <div class="row" ><div class="col s2" ><button class="btn btn-danger close-popup" >X</button></div></div>
+                <p>Editar Contato</p>
+                <hr/>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Data do evento" id="data_evento_edit" type="text" >
+                        <label for="data_evento_edit">Data do evento</label>
+                    </div>
+                 </div>
+                 <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Hora" id="hora_evento_edit" type="text" >
+                        <label for="hora_evento_edit">Hora</label>
+                    </div>
+                 </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Nome do evento" id="nome_evento_edit" type="text" class="validate">
+                        <label for="nome_evento_edit">Nome do evento</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Email" id="email_evento_edit" type="email" class="validate">
+                        <label for="email_evento_edit">Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Telefone" id="telefone_evento_edit" type="text" class="validate">
+                        <label for="telefone_evento_edit">Telefone</label>
+                    </div>
+                </div>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea placeholder="Descrição" id="descricao_evento_edit" class="materialize-textarea"></textarea>
+                    <label for="descricao_evento_edit">Descrição</label>
+                  </div>
+                </div>
+                
+
+                  <label>Enviou a Apresentação?</label>
+                  <div class="list-block">
+                    <ul>
+                      <!-- Single radio input -->
+                      <li>
+                        <label class="label-radio item-content">
+                          <!-- Checked by default -->
+                          <input type="radio" name="apresentacao_evento_edit" value="1" checked="checked">
+                          <div class="item-media">
+                            <i class="icon icon-form-radio"></i>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title">Sim</div>
+                          </div>
+                        </label>
+                      </li>
+                      <!-- Another radio input -->
+                      <li>
+                        <label class="label-radio item-content">
+                          <input type="radio" name="apresentacao_evento_edit" value="0">
+                          <div class="item-media">
+                            <i class="icon icon-form-radio"></i>
+                          </div>
+                          <div class="item-inner">
+                            <div class="item-title">Não</div>
+                          </div>
+                        </label>
+                      </li>                    
+                    </ul>
+                  </div>                
+
+                 <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Nome do Contato" id="contato_evento_edit" type="text" class="validate">
+                        <label for="contato_evento_edit">Nome do Contato</label>
+                    </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Cargo" id="cargo_evento_edit" type="text" class="validate">
+                        <label for="cargo_evento_edit">Cargo</label>
+                    </div>
+                 </div>
+
+                 <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Endereço" id="endereco_evento_edit" type="text" class="validate">
+                        <label for="endereco_evento_edit">Endereço</label>
+                    </div>
+                 </div>
+
+                 <br/>
+
+                 <label for="tipo_evento_edit" >Tipo</label>
+                 <select id="tipo_evento_edit" class="form-control" >
+                     <option value="Pessoal" >Pessoal</option>
+                     <option value="Reuniao_propria" >Reunião Própria</option>
+                     <option value="Reuniao_ferramenta" >Reunião Ferramenta</option>
+                     <option value="Compromisso_aqcez" >Compromisso Aqcez</option>
+                     <option value="go_construct" >Go Construct</option>
+                 </select>
+
+                 <label></label>
+
+                 <label>Quem Vai</label>
+                 <select id="quem_vai_evento_edit" class="form-control" >
+
+                 </select>
+                 <br/><br/>
+
+                 <p class="buttons-row" style="width: 65%; padding-left: 34%; " >
+                    <a href="#" id="editar_evento" class="button button-raised button-fill color-green">Editar</a>            
+                  </p>
+
+
+                 <!-- <p><a href="#" class="close-popup">Close popup</a></p> -->
+                
+              </div>
+          </div>
+
+
+        <!-- ===============================Fim de Editar Registro ============================================ -->
+
+
+          
+        <!-- ========================================  Painel da Lateral =================================== -->
+        
+        <div class="panel-overlay"></div>
+          <div class="panel panel-left panel-cover">
+            <div class="content-block">
+             <!-- <p>Left Panel content here</p>
+              <p><a href="#" class="panel-close">Close me</a></p>
+              <p><a href="#" class="open-right-panel">Open Right Panel</a></p>
+              --><br/><br/>
+
+              <div class="row" >
+                  <div class="col s2">
+                      
+                  </div>
+                  <div class="col s9" >
+                      <img src="img/calendar_icone.png" style="width: 60%; height: 60%;" alt="agenda_icone">
+                  </div>
+              </div>
+
+              <div class="list-block">
+
+                  <ul>
+                    <li>
+                      <a href="#" data-popup=".popup-about" class="item-link item-content open-popup">
+                        
+                        <div class="item-inner">
+                          
+                          <div class="item-title">Adicionar Evento</div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" id="atualizar_agenda" class="item-link item-content">
+                        
+                        <div class="item-inner">
+                          <div class="item-title">Atualizar</div>                          
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" id="sair_agenda" class="item-link item-content">
+                        
+                        <div class="item-inner">
+                          <div class="item-title">Sair</div>                          
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                  
+              </div>
+
+              
+            </div>
+          </div>
+         <!-- <div class="panel panel-right panel-cover">
+            <div class="content-block">
+              <p>Right Panel content here</p>
+              <p><a href="#" class="panel-close">Close me</a></p>
+              <p><a href="#" class="open-left-panel">Open Left Panel</a></p>
+            </div>
+          </div>
+          ...
+            <div class="page-content">
+              <div class="content-block">
+                <p><a href="#" class="open-left-panel">Open Left Panel</a></p>
+                <p><a href="#" class="open-right-panel">Open Right Panel</a></p>
+              </div>
+            </div>
+        -->
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        
+        <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+
+        <script type="text/javascript" src="js/moment.js"></script>
+        <script type="text/javascript" src="js/framework7/framework7.min.js" ></script>
+        <script type="text/javascript" src="js/agenda/agenda_framework7.js" ></script>
+        
+
+
+        <script type="text/javascript" src="js/materialize/materialize.min.js" ></script> 
+        <!-- <script type="text/javascript" src="js/arquivo_inicio.js"></script>  -->
+        <script type="text/javascript" src="js/framework7/my-app.js" ></script>
+
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+        <script type="text/javascript" src="js/datapicker/jquery.ui.timepicker.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.11.4.custom/jquery-ui.min.js"></script>
+
+        <script src='js/fullcalendar/lib/moment.min.js'></script>   
+        <script src='js/fullcalendar/fullcalendar.min.js'></script>
+        <script src='js/fullcalendar/locale/pt-br.js'></script>
+
+        <script type="text/javascript" src="js/agenda/agenda_files2.js" ></script>
+        <script type="text/javascript" src="js/agenda/agenda_files.js" ></script>
+        <script type="text/javascript" src="js/agenda/agenda_datapicker.js" ></script>
+
+
+
+    </body>
+</html>

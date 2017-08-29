@@ -1,0 +1,70 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "phonegap-plugin-push": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        },
+        "cordova-plugin-fullscreen": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "angenda.com.aqcez"
+        }
+    }
+}
