@@ -32,7 +32,7 @@ var app = {
         StatusBar.hide();
 
         function onConfirm(buttonIndex){
-            alert("Você selecionou o botão "+buttonIndex);
+            //alert("Você selecionou o botão "+buttonIndex);
             if(buttonIndex == 1){
                 location.reload();
             }
@@ -40,7 +40,7 @@ var app = {
 
         var path = window.location.pathname;
         var page = path.split("/").pop();
-        alert(page);
+        //alert(page);
 
         var push = PushNotification.init({ "android": {"senderID": "94293016035"}});
 
@@ -56,13 +56,15 @@ var app = {
 
          push.on('notification', function(data) {
             //alert(data.title+" Message: " +data.message);
+            let mensagem = 'Novo evento foi adicionado, deseja atualizar a agenda?';
             if(page == 'index.html'){
                 
             }else if(page == 'agenda.html'){
+                
                 navigator.notification.beep(2);
                 navigator.vibrate(2000);
                 navigator.notification.confirm(
-                    data.message,
+                    mensagem,
                     onConfirm,
                     data.title,
                     ['OK', 'Cancelar']

@@ -15,4 +15,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <icon src="res/icon/android/icon-96-xhdpi.png" />
+    <preference name="Fullscreen" value="true" />
 </widget>

@@ -77,6 +77,10 @@ $(document).ready(function() {
 
 		});
 
+		$('#atualizar_agenda').click(function(){
+			location.reload();
+		});
+
 
 		
 });
