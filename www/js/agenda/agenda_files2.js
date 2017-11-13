@@ -52,9 +52,8 @@ $(document).ready(function() {
 		data_agenda_cad.append('email_contato', email_evento);
 		data_agenda_cad.append('enviar_presenta', apresent_evento);
 
-		if(nome_evento.trim() != '' && email_evento.trim() != '' && telefone_evento.trim() != '' && descricao_evento.trim()  != '' 
-		&& data_evento.trim() != '' && hora_evento.trim() != '' && contato_evento.trim() != '' && cargo_evento.trim() != '' 
-		&& endereco_evento.trim() != '' && tipo_evento.trim() != '' && quem_vai_evento.trim() != ''){
+		if(nome_evento.trim() != '' && descricao_evento.trim()  != '' && data_evento.trim() != '' && hora_evento.trim() != '' 
+			&& contato_evento.trim() != ''  && tipo_evento.trim() != '' && quem_vai_evento.trim() != ''){
 
 			$.ajax({
 				type: 'POST',
@@ -114,9 +113,9 @@ $(document).ready(function() {
 		data_agenda_edit.append("quem_vai_edit", quem_vai_evento_edit);
 		data_agenda_edit.append("cale_event", id_calendario);
 
-		if(nome_evento_edit.trim() != '' && email_evento_edit.trim() != '' && telefone_evento_edit.trim() != '' && descricao_evento_edit.trim() != '' 
-		  && data_evento_edit.trim() != '' && hora_evento_edit.trim() != '' && contato_evento_edit.trim() != '' && cargo_evento_edit.trim() != '' 
-		  && endereco_evento_edit.trim() != '' && tipo_evento_edit.trim() != '' && quem_vai_evento_edit.trim() != '' ){
+		if(nome_evento_edit.trim() != '' && descricao_evento_edit.trim() != '' 
+		  && data_evento_edit.trim() != '' && hora_evento_edit.trim() != '' && contato_evento_edit.trim() != ''  
+		  && tipo_evento_edit.trim() != '' && quem_vai_evento_edit.trim() != '' ){
 
 			$.ajax({
 				type: 'POST',
